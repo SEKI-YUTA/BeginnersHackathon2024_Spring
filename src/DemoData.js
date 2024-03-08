@@ -6,3 +6,4 @@ const DEMO_TRACK_DATA = {
     jacket: "https://dummyimage.com/400x400/000/fff",
     links: ["https://www.example.com", "https://www.example2.com"],
 };
+export default DEMO_TRACK_DATA;
