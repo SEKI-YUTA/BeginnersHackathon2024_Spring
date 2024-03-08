@@ -8,7 +8,7 @@ module.exports = {
     ],
     ignorePatterns: ["dist", "docs"],
     parser: "@typescript-eslint/parser",
-    plugins: ["@typescript-eslint", "react", "react-refresh"],
+    plugins: ["@typescript-eslint", "react", "unused-imports", "react-refresh"],
     rules: {
       "react-refresh/only-export-components": [
         "warn",
@@ -37,7 +37,7 @@ module.exports = {
       /**
        * 未使用のimport削除
        */
-      // "unused-imports/no-unused-imports": "warn",
+      "unused-imports/no-unused-imports": "warn",
   
       /**
        * @description propsを自動でソート
