@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: frontend-react-app
+        working-directory: ./
     permissions:
       contents: read
       security-events: write
