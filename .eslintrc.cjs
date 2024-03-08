@@ -22,7 +22,7 @@ module.exports = {
       // no-mixed-spaces-and-tabsルールをoffに設定する
       "no-mixed-spaces-and-tabs": "off",
       // // インデントはスペースで統一
-      indent: ["error", 2, { SwitchCase: 1 }],
+      // indent: ["error", 2, { SwitchCase: 1 }],
   
       // // タブ文字は使用しない
       // 'no-tabs': 'error',
