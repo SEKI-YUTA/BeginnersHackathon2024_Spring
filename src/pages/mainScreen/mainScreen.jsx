@@ -23,12 +23,25 @@ function Mainscreen() {
                         </div>
                     </div>
 
-                    <div className="flex-1 grow flex flex-col mr-10">
+                    <div className="flex-1 grow flex flex-col space-between mr-10">
                         <div className="flex w-[500px] border-b">
-                            <p className="ml-3 text-left text-2xl">
+                            <p className="ml-3 text-left text-2xl flex-1 justify-center">
                                 {DEMO_TRACK_DATA.artistName}
                             </p>
-                            <div className="w-10 h-10 rounded-full"></div>
+                            <div className="flex mb-2">
+                                <button
+                                    onClick={() => {
+                                        console.log("clicked");
+                                    }}
+                                    className="w-8 h-8 rounded-full bg-red-600"
+                                ></button>
+                                <button
+                                    onClick={() => {
+                                        console.log("clicked");
+                                    }}
+                                    className="w-8 h-8 rounded-full bg-green-500 ml-1"
+                                ></button>
+                            </div>
                         </div>
 
                         <div className="mt-4 border-2 rounded-md text-start p-2 flex-1">
