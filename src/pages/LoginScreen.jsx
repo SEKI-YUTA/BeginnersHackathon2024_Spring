@@ -8,7 +8,7 @@ export const LoginScreen = () => {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [isLogin, setIsLogin] = useState(true)
-    // const [validEmailPassword,setValidEmailPassword] = useState(true)
+    const [validEmailPassword,setValidEmailPassword] = useState(true)
     const signInEmail = async () => {
         console.log("signinemail")
         await signInWithEmailAndPassword(auth, email, password)
@@ -21,6 +21,7 @@ export const LoginScreen = () => {
             })
             .catch((err) => {
                 console.log(err)
+                setValidEmailPassword(false)
             })
     }
     const signUpEmail = async () => {
@@ -91,9 +92,7 @@ export const LoginScreen = () => {
                     {isLogin ? "新規登録をする" : "ログインをする"}
                 </span>
             </form>
-            {/* <p>
-                {validEmailPassword ? "" : "パスワードまたはメールアドレスが間違えている可能性があります"}
-            </p> */}
+            {validEmailPassword ? "" : <p className='text-red-500 mt-5'>パスワードまたはメールアドレスが<br/>間違えている可能性があります</p>} 
 
         </div>
     )
