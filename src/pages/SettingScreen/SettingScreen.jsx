@@ -1,9 +1,12 @@
 import { useState } from 'react';
 import GenrusItem from './GenrusItem';
-
-
+import { useNavigate } from "react-router-dom";
+import { useLogOut } from "../../components/useLogOut";
+import { Link } from "react-router-dom";
 const SettingScreen = () => {
     const [settingText, setHandle] = useState(true);
+    const navigate = useNavigate();
+    const {logout} = useLogOut()
 
     const settingHandle1 = () => {
         if (settingText === '') return;
@@ -83,6 +86,7 @@ const SettingScreen = () => {
                 </div>
 
             </div>
+            <Link to="/" onClick={logout}>ログアウトする</Link>
 
         </div>
     );
@@ -91,7 +95,9 @@ const SettingScreen = () => {
         <div>
             <div className="flex w-[1300px] h-[40px]">
                 <div className="flex items-center justify-center w-[100px] h-[40px] border-r border-b text-sm" >
-                    <button>戻る</button>
+                    <button onClick={() => {
+                navigate("/Main");
+            }}>戻る</button>
                 </div>
                 <div className="flex items-center justify-left w-[1200px] h-[40px] pl-10 border-b text-xl" >
                     <div>設定</div>

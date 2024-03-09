@@ -1,11 +1,11 @@
 import DEMO_TRACK_DATA from "../../DemoData";
 import { FaGear } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 function Mainscreen() {
   return (
-    
-    
-    <div className="w-full space-between ">
+   
+    <div className="w-full space-between" >
         <div className="flex w-full">
             <div className="flex-none grow">
                 <div className="m-11 ">
@@ -53,12 +53,11 @@ function Mainscreen() {
 
             
             <div className="flex-initial grow mt-11" >
-                <a href=""><FaGear /></a>
+                <Link to="/Setting"><FaGear /></Link>
             </div>
 
 
         </div>
-        
     </div>
   );
 }

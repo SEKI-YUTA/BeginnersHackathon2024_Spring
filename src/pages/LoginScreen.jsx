@@ -1,16 +1,28 @@
-import { useState } from 'react';
+import { useContext,useState, useEffect } from 'react';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-import { signInWithEmailAndPassword, createUserWithEmailAndPassword, getAuth } from "firebase/auth";
+import { signInWithEmailAndPassword, createUserWithEmailAndPassword, getAuth,onAuthStateChanged } from "firebase/auth";
 import { firebaseApp } from '../firebase';
-export const LoginScreen = () => {
+import { useNavigate } from "react-router-dom";
+export const LoginScreen = ({ userContext, setUserDataState }) => {
     const auth = getAuth(firebaseApp)
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [isLogin, setIsLogin] = useState(true)
     const [validEmailPassword,setValidEmailPassword] = useState(true)
+    const userData = useContext(userContext);
+    const navigate = useNavigate();
+    useEffect(()=> {
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                
+              navigate("/Main");
+            }
+          });
+    },[])
+   
     const signInEmail = async () => {
-        console.log("signinemail")
+        console.log("これはユーザーデータです",userData)
         await signInWithEmailAndPassword(auth, email, password)
             .then((result) => {
                 console.log(result)
@@ -18,6 +30,8 @@ export const LoginScreen = () => {
                     // ログイン後の画面に移動する処理を後で書く
                     setValidEmailPassword(true)
                     console.log("トップ画面に移動")
+                    setUserDataState({Uid:result.user.uid});
+                    navigate("/Main");
                 }
             })
             .catch((err) => {
@@ -33,6 +47,7 @@ export const LoginScreen = () => {
             })
     }
     return (
+       
         <div className='flex justify-center flex-col w-96 m-auto h-screen items-center'>
             <h1 className='mb-20 text-4xl font-bold'>ログイン画面</h1>
             <form className='flex flex-col justify-center' >
@@ -102,5 +117,6 @@ export const LoginScreen = () => {
             {validEmailPassword ? "" : <p className='text-red-500 mt-5'>パスワードまたはメールアドレスが<br/>間違えている可能性があります</p>} 
 
         </div>
+        
     )
 }
