@@ -1,7 +1,9 @@
 import DEMO_TRACK_DATA from "../../DemoData";
 import { FaGear } from "react-icons/fa6";
-
+import { Link } from "react-router-dom";
+import { useLogOut } from "../../components/useLogOut";
 function Mainscreen() {
+const { logout } = useLogOut();
   return (
     
     
@@ -43,12 +45,12 @@ function Mainscreen() {
 
             
             <div className="flex-initial grow mt-11" >
-                <a href=""><FaGear /></a>
+                <Link to="/Setting"><FaGear /></Link>
             </div>
 
 
         </div>
-        
+        <button onClick={logout}>ログアウト</button>
     </div>
   );
 }
