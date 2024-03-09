@@ -22,7 +22,7 @@ export const LoginScreen = ({ userContext, setUserDataState }) => {
     },[])
    
     const signInEmail = async () => {
-        console.log(userData)
+        console.log("これはユーザーデータです",userData)
         await signInWithEmailAndPassword(auth, email, password)
             .then((result) => {
                 console.log(result)
@@ -30,7 +30,7 @@ export const LoginScreen = ({ userContext, setUserDataState }) => {
                     // ログイン後の画面に移動する処理を後で書く
                     setValidEmailPassword(true)
                     console.log("トップ画面に移動")
-                    setUserDataState({Uid:"aiueo"});
+                    setUserDataState({Uid:result.user.uid});
                     navigate("/Main");
                 }
             })

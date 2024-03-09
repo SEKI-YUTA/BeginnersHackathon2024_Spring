@@ -1,13 +1,12 @@
 import DEMO_TRACK_DATA from "../../DemoData";
 import { FaGear } from "react-icons/fa6";
 import { Link } from "react-router-dom";
-import { useLogOut } from "../../components/useLogOut";
+
 function Mainscreen() {
-const { logout } = useLogOut();
   return (
     
     
-    <div className="w-full space-between">
+    <div className="w-full space-between" >
         <div className="flex w-full">
             <div className="flex-none grow">
                 <div className="m-11 ">
@@ -50,7 +49,6 @@ const { logout } = useLogOut();
 
 
         </div>
-        <button onClick={logout}>ログアウト</button>
     </div>
   );
 }

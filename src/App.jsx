@@ -1,5 +1,4 @@
 import './App.css';
-// import { LoginScreen } from './pages/LoginScreen';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { useContext,createContext,useState } from 'react';
 import {LoginScreen} from "./pages/LoginScreen"
@@ -17,6 +16,7 @@ function App() {
                     userContext={UserContext}
                     setUserDataState={(data) => {
                         setUserDataState(data);
+                        console.log(data)
                     }}
                 />
             ),

@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import GenrusItem from './GenrusItem';
 import { useNavigate } from "react-router-dom";
-
+import { useLogOut } from "../../components/useLogOut";
+import { Link } from "react-router-dom";
 const SettingScreen = () => {
     const [settingText, setHandle] = useState(true);
     const navigate = useNavigate();
+    const {logout} = useLogOut()
 
     const settingHandle1 = () => {
         if (settingText === '') return;
@@ -84,6 +86,7 @@ const SettingScreen = () => {
                 </div>
 
             </div>
+            <Link to="/" onClick={logout}>ログアウトする</Link>
 
         </div>
     );
