@@ -16,6 +16,7 @@ export const LoginScreen = () => {
                 console.log(result)
                 if (result["_tokenResponse"]["registered"]) {
                     // ログイン後の画面に移動する処理を後で書く
+                    setValidEmailPassword(true)
                     console.log("トップ画面に移動")
                 }
             })
@@ -27,6 +28,7 @@ export const LoginScreen = () => {
     const signUpEmail = async () => {
         await createUserWithEmailAndPassword(auth, email, password)
             .then((result) => {
+                setValidEmailPassword(true)
                 console.log("新規登録", result)
             })
     }
@@ -88,7 +90,12 @@ export const LoginScreen = () => {
                     </Button>
                 </span>
                 <span className='text-blue-500 cursor-pointer'>{isLogin ? "パスワードを忘れた" : " "}</span>
-                <span onClick={() => setIsLogin(!isLogin)} className='text-blue-500 cursor-pointer'>
+                <span onClick={() => {
+                    setIsLogin(!isLogin)
+                    setValidEmailPassword(true)
+                    setEmail("")
+                    setPassword("")
+                }} className='text-blue-500 cursor-pointer'>
                     {isLogin ? "新規登録をする" : "ログインをする"}
                 </span>
             </form>
