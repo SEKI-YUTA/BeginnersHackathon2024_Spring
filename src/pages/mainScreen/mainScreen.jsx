@@ -11,7 +11,7 @@ function Mainscreen() {
                 <div className="m-11 ">
                     <img className="size-max" src={DEMO_TRACK_DATA.jacket}/>
                 </div>
-                <div className="ml-11 border-2 rounded-md">
+                <div className="ml-11 rounded-md">
                     <h1 className="font-sans text-4xl mt-4 mb-4 ml-2">
                         {DEMO_TRACK_DATA.trackName}
                     </h1>
@@ -19,11 +19,14 @@ function Mainscreen() {
             </div>
 
             <div className="flex-initial grow">
-             <div className="m-11">
-                <h1 className="">アーティスト名</h1>
-             </div>
+                <div className="flex mt-8 ml-11 w-[500px] h-[20px] border-b">
+                    <p className="ml-7 text-left">
+                        {DEMO_TRACK_DATA.artistName}
+                    </p>
+                </div>
+
                 <div className="m-11 border-2 rounded-md">
-                    <p className="h-40">
+                    <p className="h-40 overflow-auto">
                         {DEMO_TRACK_DATA.description}
                     </p>
                 </div>
