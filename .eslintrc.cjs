@@ -37,7 +37,7 @@ module.exports = {
         /**
          * 未使用のimport削除
          */
-        "unused-imports/no-unused-imports": "warn",
+        "unused-imports/no-unused-imports": "error",
 
         /**
          * @description propsを自動でソート
