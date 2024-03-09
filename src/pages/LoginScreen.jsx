@@ -2,11 +2,13 @@ import { useState } from 'react';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import { signInWithEmailAndPassword, createUserWithEmailAndPassword, getAuth } from "firebase/auth";
+import { firebaseApp } from '../firebase';
 export const LoginScreen = () => {
-    const auth = getAuth()
+    const auth = getAuth(firebaseApp)
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [isLogin, setIsLogin] = useState(true)
+    // const [validEmailPassword,setValidEmailPassword] = useState(true)
     const signInEmail = async () => {
         console.log("signinemail")
         await signInWithEmailAndPassword(auth, email, password)
@@ -89,6 +91,9 @@ export const LoginScreen = () => {
                     {isLogin ? "新規登録をする" : "ログインをする"}
                 </span>
             </form>
+            {/* <p>
+                {validEmailPassword ? "" : "パスワードまたはメールアドレスが間違えている可能性があります"}
+            </p> */}
 
         </div>
     )
