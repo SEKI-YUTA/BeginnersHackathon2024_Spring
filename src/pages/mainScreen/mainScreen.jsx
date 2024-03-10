@@ -3,6 +3,7 @@ import { FaGear } from "react-icons/fa6";
 import SmallTrackItem from "../../components/SmallTrackItem";
 import AppHeader from "../../components/AppHeader";
 import SpotifyImg from "../../images/Spotify_Icon.png"
+import shareImg from "../../images/share.svg"
 
 function Mainscreen() {
     return (
@@ -37,6 +38,14 @@ function Mainscreen() {
                                     className="w-8 h-8 rounded-full ml-1"
                                 >
                                     <img src={SpotifyImg} alt="" />
+                                </button>
+                                <button
+                                    onClick={() => {
+                                        console.log("clicked");
+                                    }}
+                                    className="w-8 h-8 rounded-full ml-1 mr-4"
+                                >
+                                    <img src={shareImg} alt="" />
                                 </button>
                             </div>
                         </div>
