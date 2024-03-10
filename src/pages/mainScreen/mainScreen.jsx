@@ -33,12 +33,6 @@ function Mainscreen() {
                                     onClick={() => {
                                         console.log("clicked");
                                     }}
-                                    className="w-8 h-8 rounded-full bg-red-600"
-                                ></button>
-                                <button
-                                    onClick={() => {
-                                        console.log("clicked");
-                                    }}
                                     className="w-8 h-8 rounded-full bg-green-500 ml-1"
                                 ></button>
                             </div>
