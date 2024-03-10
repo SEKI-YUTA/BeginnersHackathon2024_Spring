@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 function AppHeader({ tailIcon, tailIconClickEvent }) {
     return (
         <header class="bg-white">
@@ -37,12 +38,14 @@ function AppHeader({ tailIcon, tailIconClickEvent }) {
                     </a> */}
                 </div>
                 <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-                    <a
-                        href="#"
-                        class="text-sm font-semibold leading-6 text-gray-900"
+                    
+                    <Link
+                        to="/Setting" // 遷移させたいパスを`to`プロパティで指定します。
+                        className="text-sm font-semibold leading-6 text-gray-900"
+                        onClick={tailIconClickEvent} // クリックイベントがある場合はこちらにも指定します
                     >
                         {tailIcon}
-                    </a>
+                    </Link>
                 </div>
             </nav>
         </header>
