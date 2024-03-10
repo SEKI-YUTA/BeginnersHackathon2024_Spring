@@ -2,6 +2,7 @@ import DEMO_TRACK_DATA from "../../DemoData";
 import { FaGear } from "react-icons/fa6";
 import SmallTrackItem from "../../components/SmallTrackItem";
 import AppHeader from "../../components/AppHeader";
+import SpotifyImg from "../../images/Spotify_Icon.png"
 
 function Mainscreen() {
     return (
@@ -33,8 +34,10 @@ function Mainscreen() {
                                     onClick={() => {
                                         console.log("clicked");
                                     }}
-                                    className="w-8 h-8 rounded-full bg-green-500 ml-1"
-                                ></button>
+                                    className="w-8 h-8 rounded-full ml-1"
+                                >
+                                    <img src={SpotifyImg} alt="" />
+                                </button>
                             </div>
                         </div>
 
