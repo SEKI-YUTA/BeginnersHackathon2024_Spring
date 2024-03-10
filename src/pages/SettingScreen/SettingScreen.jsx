@@ -3,7 +3,9 @@ import GenrusItem from "./GenrusItem";
 import { useNavigate } from "react-router-dom";
 import { useLogOut } from "../../components/useLogOut";
 import { Link } from "react-router-dom";
+import {Genres} from "../../Genres"
 import PulldownMenu from '../../components/PulldownMenu';
+
 const SettingScreen = () => {
     const [settingText, setHandle] = useState(true);
     const navigate = useNavigate();
@@ -50,11 +52,11 @@ const SettingScreen = () => {
                     ジャンル設定
                 </p>
             </div>
-            <div className="flex w-full">
-                <GenrusItem value="ポップ" />
-                <GenrusItem value="ロック" />
-                <GenrusItem value="ジャズ" />
-                <GenrusItem value="ハードコア" />
+            <div className="flex w-full flex-wrap">
+                {Genres.map((Genre)=>{
+                    console.log(Genre)
+                    return <GenrusItem value={Genre}/>
+    })}
             </div>
             <div className="pt-5">
                 <button
