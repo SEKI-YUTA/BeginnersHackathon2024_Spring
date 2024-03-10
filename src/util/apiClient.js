@@ -1,8 +1,10 @@
 import axios from "axios";
 
 const getRecommendations = async () => {
-    const client_id = process.env.SPOTIFY_CLIENT_ID;
-    const seacret_id = process.env.SPOTIFY_SEACRET_ID;
+    const client_id = process.env.REACT_APP_SPOTIFY_CLIENT_ID;
+    const seacret_id = process.env.REACT_APP_SPOTIFY_SEACRET_ID;
+    console.log(client_id);
+    console.log(seacret_id);
     const redirect_uri = "http://localhost:3000";
     let result = null;
     const response = await fetch("https://accounts.spotify.com/api/token", {
@@ -23,7 +25,7 @@ const getRecommendations = async () => {
                     Authorization: `Bearer ${data.access_token}`, // アクセストークンをここに入れます
                 },
                 params: {
-                    limit: 1,
+                    limit: 5,
                     seed_artists: "4NHQUGzhtTLFvgF5SZesLK",
                     seed_genres: "classical,country",
                     seed_tracks: "0c6xIDDpzE81m2q797ordA",

@@ -1,14 +1,17 @@
-function SmallTrackItem({
-    jacketURL = "https://dummyimage.com/400x400/000/fff",
-    trackName,
-    trackLength,
-    description,
-    link,
-}) {
+function SmallTrackItem({ track }) {
     return (
         <div className="aspect-square grow p-2 w-1/4">
-            <a href={link}>
-                <img src={jacketURL} className="block size-full rounded-lg" />
+            <a href={""}>
+                <img
+                    src={
+                        track &&
+                        track.album &&
+                        track.album.images[0].url
+                            ? track.album.images[0].url
+                            : ""
+                    }
+                    className="block size-full rounded-lg"
+                />
             </a>
         </div>
     );

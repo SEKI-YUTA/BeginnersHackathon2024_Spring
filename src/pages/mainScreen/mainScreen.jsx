@@ -6,17 +6,13 @@ import SpotifyImg from "../../images/Spotify_Icon.png"
 import shareImg from "../../images/share.svg"
 import { useEffect, useState } from "react";
 import getRecommendations from "../../util/apiClient";
-import spotifySampleRes from "../../util/spotifySampleRes";
 
 function Mainscreen() {
     const [recommendData, setRecommendData] = useState({});
     const [track, setTrack] = useState({});
-    // useEffect(() => {
-    //     setTrack(recommendData.tracks[0]);
-    // }, [recommendData]);
     useEffect(async() => {
-        // const res = await getRecommendations();
-        const res = spotifySampleRes;
+        const res = await getRecommendations();
+        // const res = spotifySampleRes;
         setRecommendData(res);
         console.log("res");
         console.log(res);
@@ -103,10 +99,6 @@ function Mainscreen() {
                                             />
                                         );
                                     })}
-                            {/* <SmallTrackItem />
-                            <SmallTrackItem />
-                            <SmallTrackItem />
-                            <SmallTrackItem /> */}
                         </div>
                     </div>
                 </div>
