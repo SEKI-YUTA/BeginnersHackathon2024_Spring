@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 function AppHeader({ tailIcon, tailIconClickEvent }) {
     return (
-        <header class="bg-white">
+        <header class="bg-white shadow-md">
             <nav
                 class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
                 aria-label="Global"
@@ -38,7 +38,6 @@ function AppHeader({ tailIcon, tailIconClickEvent }) {
                     </a> */}
                 </div>
                 <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-                    
                     <Link
                         to="/Setting" // 遷移させたいパスを`to`プロパティで指定します。
                         className="text-sm font-semibold leading-6 text-gray-900"
