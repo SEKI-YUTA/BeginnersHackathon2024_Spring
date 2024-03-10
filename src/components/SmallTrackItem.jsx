@@ -4,9 +4,7 @@ function SmallTrackItem({ track }) {
             <a href={""}>
                 <img
                     src={
-                        track &&
-                        track.album &&
-                        track.album.images[0].url
+                        track && track.album && track.album.images[0].url
                             ? track.album.images[0].url
                             : ""
                     }

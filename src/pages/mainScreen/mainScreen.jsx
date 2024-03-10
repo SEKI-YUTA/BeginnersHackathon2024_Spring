@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import getRecommendations from "../../util/apiClient";
 import LoadingIndicator from "../../components/LoadingIndicator";
 
-function Mainscreen() {
+function MainScreen() {
     const [recommendData, setRecommendData] = useState({});
     const [track, setTrack] = useState({});
     useEffect(() => {
@@ -130,4 +130,4 @@ function Mainscreen() {
     }
 }
 
-export default Mainscreen;
+export default MainScreen;

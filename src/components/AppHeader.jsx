@@ -1,22 +1,22 @@
 import { Link } from "react-router-dom";
 function AppHeader({ tailIcon, tailIconClickEvent }) {
     return (
-        <header class="bg-white shadow-md">
+        <header className="bg-white shadow-md">
             <nav
-                class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
+                className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
                 aria-label="Global"
             >
-                <div class="hidden lg:flex lg:gap-x-12">
+                <div className="hidden lg:flex lg:gap-x-12">
                     {/* 後で追加したい時用にコメントアウトしておく */}
-                    {/* <div class="relative">
+                    {/* <div className="relative">
                         <button
                             type="button"
-                            class="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900"
+                            className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900"
                             aria-expanded="false"
                         >
                             Product
                             <svg
-                                class="h-5 w-5 flex-none text-gray-400"
+                                className="h-5 w-5 flex-none text-gray-400"
                                 viewBox="0 0 20 20"
                                 fill="currentColor"
                                 aria-hidden="true"
@@ -32,12 +32,12 @@ function AppHeader({ tailIcon, tailIconClickEvent }) {
 
                     {/* <a
                         href="#"
-                        class="text-sm font-semibold leading-6 text-gray-900"
+                        className="text-sm font-semibold leading-6 text-gray-900"
                     >
                         Features
                     </a> */}
                 </div>
-                <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+                <div className="hidden lg:flex lg:flex-1 lg:justify-end">
                     <Link
                         to="/Setting" // 遷移させたいパスを`to`プロパティで指定します。
                         className="text-sm font-semibold leading-6 text-gray-900"

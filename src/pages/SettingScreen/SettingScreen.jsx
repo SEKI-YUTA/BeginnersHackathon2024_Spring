@@ -1,10 +1,10 @@
 import { useState } from "react";
-import GenrusItem from "./GenrusItem";
+import GenreItem from "./GenreItem";
 import { useNavigate } from "react-router-dom";
 import { useLogOut } from "../../components/useLogOut";
 import { Link } from "react-router-dom";
-import {Genres} from "../../Genres"
-import PulldownMenu from '../../components/PulldownMenu';
+import { Genres } from "../../Genres";
+import PulldownMenu from "../../components/PulldownMenu";
 
 const SettingScreen = () => {
     const [settingText, setHandle] = useState(true);
@@ -53,10 +53,10 @@ const SettingScreen = () => {
                 </p>
             </div>
             <div className="flex w-full flex-wrap">
-                {Genres.map((Genre)=>{
-                    console.log(Genre)
-                    return <GenrusItem value={Genre}/>
-    })}
+                {Genres.map((Genre) => {
+                    console.log(Genre);
+                    return <GenreItem value={Genre} />;
+                })}
             </div>
             <div className="pt-5">
                 <button
@@ -73,15 +73,17 @@ const SettingScreen = () => {
                 </p>
             </div>
             <div className="flex w-full">
-                <PulldownMenu/>
+                <PulldownMenu />
             </div>
             <div className="md:w-2/3 pt-5">
-                <button type="button" className="text-gray-900 hover:text-white border border-gray-800 hover:bg-gray-900  font-medium rounded-lg text-sm py-2 px-4 text-center ">
+                <button
+                    type="button"
+                    className="text-gray-900 hover:text-white border border-gray-800 hover:bg-gray-900  font-medium rounded-lg text-sm py-2 px-4 text-center "
+                >
                     変更
                 </button>
             </div>
-
-        </div >
+        </div>
     );
 
     const AccountSettings = () => (
