@@ -41,7 +41,6 @@ function AppHeader({ tailIcon, tailIconClickEvent }) {
                     <Link
                         to="/Setting" // 遷移させたいパスを`to`プロパティで指定します。
                         className="text-sm font-semibold leading-6 text-gray-900"
-                        onClick={tailIconClickEvent} // クリックイベントがある場合はこちらにも指定します
                     >
                         {tailIcon}
                     </Link>
