@@ -6,7 +6,7 @@ function SmallTrackItem({
     link,
 }) {
     return (
-        <div className="aspect-square grow p-2">
+        <div className="aspect-square grow p-2 w-1/4">
             <a href={link}>
                 <img src={jacketURL} className="block size-full rounded-lg" />
             </a>
