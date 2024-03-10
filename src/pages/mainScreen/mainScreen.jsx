@@ -125,13 +125,6 @@ function Mainscreen() {
         return (
             <div className="size-full h-screen flex justify-center align-center">
                 <LoadingIndicator />
-                <button
-                    onClick={() => {
-                        console.log(recommendData);
-                    }}
-                >
-                    debug
-                </button>
             </div>
         );
     }
