@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import { useLogOut } from "../../components/useLogOut";
 import { Link } from "react-router-dom";
 import {Genres} from "../../Genres"
+import PulldownMenu from '../../components/PulldownMenu';
+
 const SettingScreen = () => {
     const [settingText, setHandle] = useState(true);
     const navigate = useNavigate();
@@ -64,7 +66,22 @@ const SettingScreen = () => {
                     変更
                 </button>
             </div>
-        </div>
+
+            <div className="text-start pt-4">
+                <p className="text-gray-500 font-bold mb-1 mb-0 pr-4">
+                    表示する国の設定
+                </p>
+            </div>
+            <div className="flex w-full">
+                <PulldownMenu/>
+            </div>
+            <div className="md:w-2/3 pt-5">
+                <button type="button" className="text-gray-900 hover:text-white border border-gray-800 hover:bg-gray-900  font-medium rounded-lg text-sm py-2 px-4 text-center ">
+                    変更
+                </button>
+            </div>
+
+        </div >
     );
 
     const AccountSettings = () => (

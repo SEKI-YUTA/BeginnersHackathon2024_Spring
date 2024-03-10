@@ -10,13 +10,14 @@ import LoadingIndicator from "../../components/LoadingIndicator";
 function Mainscreen() {
     const [recommendData, setRecommendData] = useState({});
     const [track, setTrack] = useState({});
-    useEffect(async () => {
-        const res = await getRecommendations();
-        // const res = spotifySampleRes;
-        setRecommendData(res);
-        console.log("res");
-        console.log(res);
+    useEffect(() => {
+        getRecmmendedData();
     }, []);
+    const getRecmmendedData = async () => {
+        getRecommendations().then((res) => {
+            setRecommendData(res);
+        });
+    };
     if (recommendData.tracks != undefined) {
         return (
             <div>
@@ -124,6 +125,13 @@ function Mainscreen() {
         return (
             <div className="size-full h-screen flex justify-center align-center">
                 <LoadingIndicator />
+                <button
+                    onClick={() => {
+                        console.log(recommendData);
+                    }}
+                >
+                    debug
+                </button>
             </div>
         );
     }
