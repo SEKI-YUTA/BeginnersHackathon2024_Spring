@@ -1,8 +1,8 @@
 import { FaGear } from "react-icons/fa6";
 import SmallTrackItem from "../../components/SmallTrackItem";
 import AppHeader from "../../components/AppHeader";
-import SpotifyImg from "../../images/Spotify_Icon.png"
-import shareImg from "../../images/share.svg"
+import SpotifyImg from "../../images/Spotify_Icon.png";
+import shareImg from "../../images/share.svg";
 import { useEffect, useState } from "react";
 import getRecommendations from "../../util/apiClient";
 import LoadingIndicator from "../../components/LoadingIndicator";
@@ -21,7 +21,7 @@ function Mainscreen() {
         return (
             <div>
                 <AppHeader tailIcon={<FaGear size={26} />} />
-                <div className="w-full space-between">
+                <div className="w-full space-between mt-2">
                     <div className="flex size-full">
                         <div className="flex-1 flex flex-col grow ml-10 mr-10">
                             <div>
@@ -64,22 +64,22 @@ function Mainscreen() {
                                             .join(", ")}
                                 </p>
                                 <div className="flex mb-2">
-                                <button
-                                    onClick={() => {
-                                        console.log("clicked");
-                                    }}
-                                    className="w-8 h-8 rounded-full ml-1"
-                                >
-                                    <img src={SpotifyImg} alt="" />
-                                </button>
-                                <button
-                                    onClick={() => {
-                                        console.log("clicked");
-                                    }}
-                                    className="w-8 h-8 rounded-full ml-1 mr-4"
-                                >
-                                    <img src={shareImg} alt="" />
-                                </button>
+                                    <button
+                                        onClick={() => {
+                                            console.log("clicked");
+                                        }}
+                                        className="w-8 h-8 rounded-full ml-1"
+                                    >
+                                        <img src={SpotifyImg} alt="" />
+                                    </button>
+                                    <button
+                                        onClick={() => {
+                                            console.log("clicked");
+                                        }}
+                                        className="w-8 h-8 rounded-full ml-1 mr-4"
+                                    >
+                                        <img src={shareImg} alt="" />
+                                    </button>
                                 </div>
                             </div>
                             <div className="flex-1 flex  space-betwee">
