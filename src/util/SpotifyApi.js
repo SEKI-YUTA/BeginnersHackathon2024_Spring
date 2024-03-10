@@ -1,8 +1,8 @@
 import axios from "axios"
 
-const client_id = "cb91a3c1f4904b3a93467e1b6b4b5d71"
-const seacret_id = "d19a1a641ab2452bada0688a3923f36b"
-const redirect_uri = "http://localhost:3000"
+// const client_id =
+// const seacret_id =
+// const redirect_uri = "http://localhost:3000"
 const getRecommendations = async () => {
     let result = null
     const response = await fetch('https://accounts.spotify.com/api/token', {
