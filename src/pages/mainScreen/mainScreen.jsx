@@ -18,7 +18,7 @@ function MainScreen() {
             setRecommendData(res);
         });
     };
-    if (recommendData.tracks != undefined) {
+    if (recommendData != null && recommendData.tracks != undefined) {
         return (
             <div>
                 <AppHeader tailIcon={<FaGear size={26} />} />
