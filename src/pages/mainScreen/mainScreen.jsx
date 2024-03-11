@@ -13,9 +13,9 @@ function MainScreen() {
         getRecmmendedData();
     }, []);
     const getRecmmendedData = async () => {
-        // getRecommendations().then((res) => {
-        //     setRecommendData(res);
-        // });
+        getRecommendations().then((res) => {
+            setRecommendData(res);
+        });
     };
     if (recommendData != null && recommendData.tracks != undefined) {
         return (
