@@ -9,7 +9,6 @@ import LoadingIndicator from '../../components/LoadingIndicator';
 
 function MainScreen() {
     const [recommendData, setRecommendData] = useState({});
-    const [track, setTrack] = useState({});
     useEffect(() => {
         getRecmmendedData();
     }, []);
