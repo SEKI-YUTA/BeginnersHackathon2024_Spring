@@ -70,7 +70,9 @@ function MainScreen() {
                                         }}
                                         className='w-8 h-8 rounded-full ml-1'
                                     >
+                                        <a href={recommendData.tracks[0].external_urls.spotify}>
                                         <img src={SpotifyImg} alt='' />
+                                        </a>
                                     </button>
                                     <button
                                         onClick={() => {
