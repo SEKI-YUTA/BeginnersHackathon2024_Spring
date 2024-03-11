@@ -8,16 +8,22 @@ import getRecommendations from '../../util/apiClient';
 import LoadingIndicator from '../../components/LoadingIndicator';
 
 function MainScreen() {
+    const [is429Error, setIs429Error] = useState(false);
     const [recommendData, setRecommendData] = useState({});
     useEffect(() => {
         getRecmmendedData();
     }, []);
     const getRecmmendedData = async () => {
         getRecommendations().then((res) => {
-            setRecommendData(res);
+            setRecommendData(res.data);
+            if (res.status === 429) {
+                setIs429Error(true);
+            }
         });
     };
-    if (recommendData != null && recommendData.tracks != undefined) {
+    if (is429Error) {
+        return <h1>APIの呼び出し回数が多いため呼び出しを制限しています。</h1>;
+    } else if (recommendData != null && recommendData.tracks != undefined) {
         return (
             <div>
                 <AppHeader tailIcon={<FaGear size={26} />} />
@@ -70,8 +76,13 @@ function MainScreen() {
                                         }}
                                         className='w-8 h-8 rounded-full ml-1'
                                     >
-                                        <a href={recommendData.tracks[0].external_urls.spotify}>
-                                        <img src={SpotifyImg} alt='' />
+                                        <a
+                                            href={
+                                                recommendData.tracks[0]
+                                                    .external_urls.spotify
+                                            }
+                                        >
+                                            <img src={SpotifyImg} alt='' />
                                         </a>
                                     </button>
                                     <button
